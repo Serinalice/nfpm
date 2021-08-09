@@ -323,7 +323,7 @@ func addEmptyDirsRPM(info *nfpm.Info, rpm *rpmpack.RPM) {
 				Name: dir.Path,
 				// 111101101
 				// 111101101
-				Mode:  uint(dir.Mode) + 0o4000,
+				Mode:  uint(dir.Mode) + 0o40000,
 				MTime: uint32(dir.MTime.Unix()),
 				Owner: dir.Owner,
 				Group: dir.Group,
