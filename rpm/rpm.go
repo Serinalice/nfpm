@@ -320,8 +320,10 @@ func addEmptyDirsRPM(info *nfpm.Info, rpm *rpmpack.RPM) {
 	for _, dir := range info.EmptyFolders {
 		rpm.AddFile(
 			rpmpack.RPMFile{
-				Name:  dir.Path,
-				Mode:  uint(dir.Mode),
+				Name: dir.Path,
+				// 111101101
+				// 111101101
+				Mode:  uint(dir.Mode) + 0o4000,
 				MTime: uint32(dir.MTime.Unix()),
 				Owner: dir.Owner,
 				Group: dir.Group,
